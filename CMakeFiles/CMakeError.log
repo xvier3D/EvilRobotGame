@@ -1,0 +1,80 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/data/user/0/ru.iiec.cxxdroid/files/bin/make -f Makefile cmTC_3228d/fast && /data/user/0/ru.iiec.cxxdroid/files/bin/make  -f CMakeFiles/cmTC_3228d.dir/build.make CMakeFiles/cmTC_3228d.dir/build
+make[1]: Entering directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3228d.dir/src.c.o
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -Wall -std=c99 -fallow-void-main  -MD -MT CMakeFiles/cmTC_3228d.dir/src.c.o -MF CMakeFiles/cmTC_3228d.dir/src.c.o.d -o CMakeFiles/cmTC_3228d.dir/src.c.o -c /storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp/src.c
+/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp/src.c:13:3: warning: implicit declaration of function 'pthread_cancel' is invalid in C99 [-Wimplicit-function-declaration]
+  pthread_cancel(thread);
+  ^
+1 warning generated.
+Linking C executable cmTC_3228d
+/data/data/ru.iiec.cxxdroid/files/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3228d.dir/link.txt --verbose=1
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang -Wall -std=c99 -fallow-void-main  -lm -ldl -llog -lz -lOpenSLES  CMakeFiles/cmTC_3228d.dir/src.c.o -o cmTC_3228d 
+/data/user/0/ru.iiec.cxxdroid/files/bin/ld: CMakeFiles/cmTC_3228d.dir/src.c.o: in function `main':
+src.c:(.text+0x20): undefined reference to `pthread_cancel'
+/data/user/0/ru.iiec.cxxdroid/files/bin/ld: src.c:(.text+0x24): undefined reference to `pthread_cancel'
+clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_3228d.dir/build.make:99: cmTC_3228d] Error 1
+make[1]: Leaving directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+make: *** [Makefile:126: cmTC_3228d/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/data/user/0/ru.iiec.cxxdroid/files/bin/make -f Makefile cmTC_7c32f/fast && /data/user/0/ru.iiec.cxxdroid/files/bin/make  -f CMakeFiles/cmTC_7c32f.dir/build.make CMakeFiles/cmTC_7c32f.dir/build
+make[1]: Entering directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c32f.dir/CheckFunctionExists.c.o
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang   -Wall -std=c99 -fallow-void-main -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_7c32f.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_7c32f.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_7c32f.dir/CheckFunctionExists.c.o -c /data/data/ru.iiec.cxxdroid/files/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7c32f
+/data/data/ru.iiec.cxxdroid/files/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c32f.dir/link.txt --verbose=1
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang -Wall -std=c99 -fallow-void-main -DCHECK_FUNCTION_EXISTS=pthread_create -lm -ldl -llog -lz -lOpenSLES  CMakeFiles/cmTC_7c32f.dir/CheckFunctionExists.c.o -o cmTC_7c32f  -lpthreads 
+/data/user/0/ru.iiec.cxxdroid/files/bin/ld: cannot find -lpthreads
+clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_7c32f.dir/build.make:99: cmTC_7c32f] Error 1
+make[1]: Leaving directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+make: *** [Makefile:126: cmTC_7c32f/fast] Error 2
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/data/user/0/ru.iiec.cxxdroid/files/bin/make -f Makefile cmTC_21277/fast && /data/user/0/ru.iiec.cxxdroid/files/bin/make  -f CMakeFiles/cmTC_21277.dir/build.make CMakeFiles/cmTC_21277.dir/build
+make[1]: Entering directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21277.dir/CheckFunctionExists.c.o
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang   -Wall -std=c99 -fallow-void-main -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_21277.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_21277.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_21277.dir/CheckFunctionExists.c.o -c /data/data/ru.iiec.cxxdroid/files/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_21277
+/data/data/ru.iiec.cxxdroid/files/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21277.dir/link.txt --verbose=1
+/data/user/0/ru.iiec.cxxdroid/files/bin/clang -Wall -std=c99 -fallow-void-main -DCHECK_FUNCTION_EXISTS=pthread_create -lm -ldl -llog -lz -lOpenSLES  CMakeFiles/cmTC_21277.dir/CheckFunctionExists.c.o -o cmTC_21277  -lpthread 
+/data/user/0/ru.iiec.cxxdroid/files/bin/ld: cannot find -lpthread
+clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_21277.dir/build.make:99: cmTC_21277] Error 1
+make[1]: Leaving directory '/storage/emulated/0/Documents/Cxxdroid/EvilRobots/CMakeFiles/CMakeTmp'
+make: *** [Makefile:126: cmTC_21277/fast] Error 2
+
+
+
