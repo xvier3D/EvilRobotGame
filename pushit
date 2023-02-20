@@ -7,13 +7,16 @@ TOKEN="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"
 
 MSG="Hello, World"
 
+DSTFILE="/sdcard/Documents/Cxxdroid/EvilRobots/src/main.cpp"
+cp $DSTFILE src/
+
 git add .
-git rm pushit
+git rm pushit >/dev/null
+
+rm src/main.cpp
+ln $DSTFILE src/main.cpp -s
 
 git commit -m "$MSG"
-git push -u origin main <<EOF
-xvier3D
-no way
-EOF
+git push -u origin main
 
 echo done
