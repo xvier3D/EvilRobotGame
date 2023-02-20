@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo starting program
+
+USERN="xvier3D"
+TOKEN="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"
+
+MSG="Hello, World"
+
+git add .
+git rm pushit
+
+git commit -m "$MSG"
+git push -u origin main <<EOF
+$USERN
+$TOKEN
+EOF
+
+echo done
