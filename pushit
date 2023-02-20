@@ -12,8 +12,8 @@ git rm pushit
 
 git commit -m "$MSG"
 git push -u origin main <<EOF
-$USERN
-$TOKEN
+xvier3D
+fuck
 EOF
 
 echo done
