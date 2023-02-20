@@ -13,7 +13,7 @@ git rm pushit
 git commit -m "$MSG"
 git push -u origin main <<EOF
 xvier3D
-fuck
+no way
 EOF
 
 echo done
